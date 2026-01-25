@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Limit with JS</title>
+</head>
+
+<body>
+    <h2>Text Limit Example</h2>
+    <textarea id="textInput" rows="4" cols="50" placeholder="Type your text here..."></textarea>
+    <p id="charCount"></p>
+
+    <script>
+        let textInput = document.getElementById('textInput');
+        let charCount = document.getElementById('charCount');
+
+        let limit = 11;
+        charCount.textContent = 0 + '/' + limit;
+
+        textInput.style.borderColor = 'red';
+        charCount.style.color = 'red';
+
+        textInput.addEventListener('input', () => {
+            let textCount = textInput.value.length;
+            charCount.textContent = textCount + '/' + limit;
+
+
+
+            if (textCount > limit) {
+                textInput.value = textInput.value.substring(0, limit);
+                textInput.style.borderColor = 'red';
+                charCount.style.color = 'red';
+            } else if (textCount == '') {
+                textInput.style.borderColor = 'red';
+                charCount.style.color = 'red';
+            }
+            else {
+                textInput.style.borderColor = 'green';
+                charCount.style.color = 'green';
+            }
+        })
+
+    </script>
+</body>
+
+</html>
