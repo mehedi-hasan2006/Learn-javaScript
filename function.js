@@ -1,23 +1,62 @@
-function sum(num1, num2 , num3 ){
-    let sum =0;
-    for( let i = 1; i<=num1; i++){
-        sum+= i
-    }
-//    console.log(sum)
+// Function is a block of code that performs a specific task, can be invoked/call whenever needed
 
-   let total = num1 + num2 + num3;
-//    console.log("total is: " , total)
-
-   let avg = total / 3;
-//    console.log("avg: ", avg);
-
-    return {
-        sumIs : sum,
-        total : total,
-        avg 
-    }
-
+function sum(a, b){
+    console.log(a+b);
 }
 
-let output = sum(100, 200 , 300);
-console.log(output);
+sum(12, 20);
+
+
+// using return keyword
+function zog(x, y){
+    s = x + y;
+    return s;
+}
+let zogfol = zog(5, 6);
+console.log(zogfol)
+
+
+//Arrow Function =>
+
+//multiplication
+
+function mul(a, b){
+    return a*b;
+}
+
+const gunFol= (a, b) =>{
+    return a*b;
+};
+
+
+
+//Qs. Create a function using the "function" keyword that takes a String as an argument & returns the number of vowels in the string.
+
+function countVowels(str){
+    let count =0;
+    for(const char of str){
+        if(char === "a" || char === "e" || char === "o" || char === "i" || char === "u"){
+            count++;
+        } 
+    }
+    return count;
+}
+
+let result = countVowels("mehedi hasan");
+console.log(result);
+
+
+//Qs. Create an arrow function to perform the same task.
+
+const countVow = (str) => {
+let count =0;
+    for(const char of str){
+        if(char === "a" || char === "e" || char === "o" || char === "i" || char === "u"){
+            count++;
+        } 
+    }
+    return count;
+}
+
+let findResults = countVow("i'm learning javaScript");
+console.log(findResults);
